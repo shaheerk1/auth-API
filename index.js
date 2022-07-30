@@ -9,6 +9,8 @@ const cors = require("cors");
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
 const adminRoute = require("./routes/admin");
+const productRoute = require("./routes/product");
+const orderRoute = require("./routes/order");
 
 dotenv.config();
 
@@ -39,6 +41,8 @@ app.get("/", (req, res) => {
 app.use("/api/user", authRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/admindashboard", adminRoute);
+app.use("/api/product", productRoute);
+app.use("/api/order", orderRoute);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`server running in port ${port}`));
